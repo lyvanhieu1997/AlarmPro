@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nhom3.edu.androialarm1">
+
+    <!--You need the wake lock so the phone can be activated-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--You need the permission to set the alarm-->
+    <uses-permission android:name="your.package.alarm.permission.SET_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.AlarmMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AddAlarmActivity">
+
+        </activity>
+
+
+        <receiver
+            android:name="nhom3.edu.androialarm1.receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="nhom3.edu.androialarm1.service.AlarmService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
